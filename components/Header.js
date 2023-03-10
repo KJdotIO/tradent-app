@@ -67,7 +67,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/"
-                  className="border-[1px] hover:bg-primaryGrad hover:opacity-75 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  className="border-[1px] hover:bg-primaryGrad focus:opacity-80 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -78,7 +78,7 @@ const Header = () => {
 
                 <Link
                   href="/"
-                  className="border-[1px] hover:bg-secondaryGrad hover:opacity-75 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  className="border-[1px] hover:bg-secondaryGrad focus:opacity-80 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign in"
                   title="Sign in"
                 >
@@ -188,7 +188,7 @@ const Header = () => {
                                 <li className="flex">
                                 <Link
                                     href="/"
-                                    className=" max-w-[300px] border-[1px] hover:bg-primaryGrad hover:opacity-75 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                    className=" max-w-[300px] border-[1px] hover:bg-primaryGrad focus:opacity-80 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                     aria-label="Sign up"
                                     title="Sign up"
                                 >
@@ -198,7 +198,7 @@ const Header = () => {
                                 <li>
                                 <Link
                                     href="/"
-                                    className=" max-w-[300px] border-[1px] hover:bg-secondaryGrad hover:opacity-75 inline-flex items-center  justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                    className=" max-w-[300px] border-[1px] hover:bg-secondaryGrad focus:opacity-80 inline-flex items-center  justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                     aria-label="Sign in"
                                     title="Sign in"
                                 >
