@@ -18,7 +18,7 @@
   font-family: var(--font-mono);
 }
 
-.description a {
+.description Link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,7 +207,7 @@
     font-size: 0.8rem;
   }
 
-  .description a {
+  .description Link {
     padding: 1rem;
   }
 

@@ -1,6 +1,7 @@
 import { React, useState} from "react";
 import logo from '../public/Tradent-logo.png'
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,80 +10,80 @@ const Header = () => {
       <div className="bg-[#18181b]">
         <div className="px-10 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24">
           <div className="relative flex items-center justify-between">
-            <a
+            <Link
               href="/"
               aria-label="Company"
               title="Company"
               className="inline-flex items-center"
             >
-              <div>              <Image alt="Tradent" src={logo} className='w-[20px] mr-1' /></div>
+              <div>  <Image alt="Tradent" src={logo} className='w-[20px] mr-1' /></div>
               <span className="ml-2 text-2xl font-black tracking-wide text-gray-100 ">
                 Tradent
               </span>
-            </a>
+            </Link>
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
-                <a
+                <Link
                   href="/"
                   aria-label="Our product"
                   title="Our product"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
                 >
                   Product
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/"
                   aria-label="Our product"
                   title="Our product"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
                 >
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/"
                   aria-label="Product pricing"
                   title="Product pricing"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
                 >
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/"
                   aria-label="About us"
                   title="About us"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
                 >
                   About us
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
-                <a
+                <Link
                   href="/"
                   className="border-[1px] hover:bg-primaryGrad hover:opacity-75 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
                 >
                   Sign up
-                </a>
+                </Link>
               </li>
               <li>
 
-                <a
+                <Link
                   href="/"
                   className="border-[1px] hover:bg-secondaryGrad hover:opacity-75 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign in"
                   title="Sign in"
                 >
                   Sign in
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="lg:hidden">
@@ -112,7 +113,7 @@ const Header = () => {
                   <div className="p-5 bg-[#18181b] border rounded shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <a
+                        <Link
                           href="/"
                           aria-label="Company"
                           title="Company"
@@ -122,7 +123,7 @@ const Header = () => {
                           <span className="ml-2 text-2xl font-black tracking-wide">
                             Tradent
                           </span>
-                        </a>
+                        </Link>
                       </div>
                       <div>
                         <button
@@ -143,66 +144,66 @@ const Header = () => {
                     <nav>
                       <ul className="space-y-4 p-[24px]">
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="Our product"
                             title="Our product"
                             className="hover:underline hover:opacity-75 transition-opacity font-medium tracking-wide duration-200 hover:text-deep-purple-accent-400"
                           >
                             Product
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="Our product"
                             title="Our product"
                             className="hover:underline font-medium tracking-wide hover:opacity-75 transition-opacity duration-200 hover:text-deep-purple-accent-400"
                           >
                             Features
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="Product pricing"
                             title="Product pricing"
                             className="hover:underline font-medium tracking-wide hover:opacity-75 transition-opacity duration-200 hover:text-deep-purple-accent-400"
                           >
                             Pricing
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="About us"
                             title="About us"
                             className="hover:underline font-medium tracking-wide hover:opacity-75 transition-opacity duration-200 hover:text-deep-purple-accent-400"
                           >
                             About us
-                          </a>
+                          </Link>
                         </li>
                         <div className="">
                             <ul className="flex justify-between flex-wrap gap-5 items-start mt-[24px]">
                                 <li className="flex">
-                                <a
+                                <Link
                                     href="/"
                                     className=" max-w-[300px] border-[1px] hover:bg-primaryGrad hover:opacity-75 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                     aria-label="Sign up"
                                     title="Sign up"
                                 >
                                     Sign up
-                                </a>
+                                </Link>
                                 </li>
                                 <li>
-                                <a
+                                <Link
                                     href="/"
                                     className=" max-w-[300px] border-[1px] hover:bg-secondaryGrad hover:opacity-75 inline-flex items-center  justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                     aria-label="Sign in"
                                     title="Sign in"
                                 >
                                     Sign in
-                                </a>
+                                </Link>
                                 </li>
 
                             </ul>

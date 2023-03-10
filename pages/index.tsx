@@ -2,13 +2,14 @@
 import Image from 'next/image'
 import logo from '../public/Tradent-logo.png'
 import Header from '../components/Header.js'
+import Link from 'next/link'
 
 const Home = () => {
   return (
     <>
       <Head>
         <title>Create Next App</title>
-        <meta name="description" content="A new way to manage trade data." />
+        <meta name="description" content="Link new way to manage trade data." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -18,11 +19,11 @@ const Home = () => {
         <div className=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
             <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
-              <a href="/" className="mb-6 sm:mx-auto">
+              <Link href="/" className="mb-6 sm:mx-auto">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                   <Image className=" delay-500" alt="logo" src={logo} />
                 </div>
-              </a>
+              </Link>
               <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                 <h2 className="max-w-lg mb-6 font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                 <span className="relative inline-block">
@@ -49,19 +50,19 @@ const Home = () => {
                   />
                 </svg>
               </span>{' '}
-                <span className=" text-6xl ">Discover a <span className=" text-secondaryGrad">new</span> way to manage <span className=" text-primaryGrad">trade data</span>.</span>
+                <span className=" text-6xl ">Discover Link <span className=" text-secondaryGrad">new</span> way to manage <span className=" text-primaryGrad">trade data</span>.</span>
               </h2>
               <p className="text-xl text-gray-700 md:text-xl font-semibold opacity-50">
-              A Comprehensive Solution for Tracking Trades, Instruments, and Market Information.
+              Link Comprehensive Solution for Tracking Trades, Instruments, and Market Information.
               </p>
             </div>
             <div>
-              <a
+              <Link
                 href="/"
                 className=" hover:opacity-75 bg-gradient-to-r from-primaryGrad to-secondaryGrad inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
                 Get started
-              </a>
+              </Link>
             </div>
             <div className="mt-10">
               <h1 className="font-extrabold opacity-25">Coming soon.</h1>
