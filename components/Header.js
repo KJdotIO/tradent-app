@@ -7,9 +7,9 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     return (
-      <div className="bg-[#18181b]">
-        <div className="px-10 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24">
-          <div className="relative flex items-center justify-between">
+      <div className="bg-[#18181b] z-40 fixed top-0 w-full">
+        <div className=" px-10 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24">
+          <div className=" flex items-center justify-between">
             <Link
               href="/"
               aria-label="Company"
@@ -109,7 +109,7 @@ const Header = () => {
                 </svg>
               </button>
               {isMenuOpen && (
-                <div className="absolute top-0 left-0 w-full z-[999]">
+                <div className="absolute top-0 left-0 w-[100%] z-[999]">
                   <div className="p-5 bg-[#18181b] border rounded shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                       <div>
