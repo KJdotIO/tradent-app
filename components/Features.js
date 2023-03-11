@@ -1,5 +1,6 @@
 import {React} from 'react';
 import {FaRegNewspaper, FaChartLine, FaBook, FaChartPie} from 'react-icons/fa'
+import Link from 'next/link';
 
 const Features = () => {
     return (
