@@ -59,13 +59,13 @@ const Features = () => {
               Our curated news feed provides the latest insights into market trends, 
               enabling you to stay ahead of the competition and make the most of opportunities as they arise.
               </p>
-              <a
+              <Link
                 href="/"
                 aria-label=""
                 className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col max-w-md sm:mx-auto sm:flex-row">
@@ -83,17 +83,17 @@ const Features = () => {
               <p className="mb-3 text-sm text-gray-900">
               With our instrument tracking feature, you can monitor your investments 
               in real-time and receive alerts when certain conditions are met. 
-              You'll be able to view your portfolio performance, 
+              You`ll be able to view your portfolio performance, 
               track your gains and losses, and gain insights into your trading habits, 
               all in one convenient location.
               </p>
-              <a
+              <Link
                 href="/"
                 aria-label=""
                 className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col max-w-md sm:mx-auto sm:flex-row">
@@ -114,16 +114,16 @@ const Features = () => {
               helping you to learn from your successes and mistakes. 
               You can customize the fields you want to track, 
               and our easy-to-use interface makes it simple to manage your trade history. 
-              With our intuitive reports, you'll gain valuable insights into your trading patterns 
+              With our intuitive reports, you`ll gain valuable insights into your trading patterns 
               and be able to optimize your investment strategies for maximum profitability.
               </p>
-              <a
+              <Link
                 href="/"
                 aria-label=""
                 className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col max-w-md sm:mx-auto sm:flex-row">
@@ -139,18 +139,18 @@ const Features = () => {
                 A clean Dashboard.
               </h6>
               <p className="mb-3 text-sm text-gray-900">
-              Our highly customizable dashboards give you a comprehensive view of your portfolio's 
+              Our highly customizable dashboards give you a comprehensive view of your portfolio`s 
               performance and trading activity, all at a glance. You have the ability to create your 
               own custom widgets, charts, and graphs to display the information that is most relevant
               to you, so you can stay informed and make smarter investment decisions. 
               </p>
-              <a
+              <Link
                 href="/"
                 aria-label=""
                 className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
         </div>
