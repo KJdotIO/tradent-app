@@ -81,6 +81,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: white;
 }
 
 html,
@@ -100,8 +101,16 @@ body {
 }
 
 Link {
-  color: inherit;
+  color: white;
   text-decoration: none;
+}
+
+Image {
+  background: none;
+}
+
+p {
+  color: white;
 }
 
 @media (prefers-color-scheme: dark) {

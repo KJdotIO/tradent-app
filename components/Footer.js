@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-      <div className="bg-gray-900">
+      <div>
         <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className=" flex justify-around flex-wrap mb-10">
             {/* <div className="mb-10 text-center">
@@ -57,7 +57,7 @@ const Footer = () => {
                   placeholder="Email"
                   required
                   type="text"
-                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 text-black rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                 />
                 <button
                 type='submit'

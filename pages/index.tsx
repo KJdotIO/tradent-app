@@ -1,12 +1,13 @@
  import Head from 'next/head'
 import Image from 'next/image'
-import logo from '../public/Tradent-logo.png'
-import Header from '../components/Header.js'
 import Link from 'next/link'
 import { Transition } from '@headlessui/react'
 import { useState } from 'react'
-import Features from '../components/Features'
+
+import logo from '../public/Tradent-logo.png'
+import Header from '../components/Header.js'
 import Footer from '../components/Footer'
+import Features from '../components/Features'
 
 import {FaChevronDown} from 'react-icons/fa'
 
@@ -26,9 +27,9 @@ const Home = () => {
       <main className=" bg-[#18181b] min-h-screen mt-[75px] sm:[80px]">
         
         <section>
+
           <div className=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-            <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
-              <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
+            <div className="max-w-xl sm:mx-auto lg:max-w-2xl">              <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
                 <Link href="/" className="mb-6 sm:mx-auto">
                     <Transition
                     show={fadeUp}
@@ -37,7 +38,7 @@ const Home = () => {
                     enterFrom="opacity-0 translate-y-5"
                     enterTo="opacity-100 translate-y-0"
                     >
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full ">
                         <Image className=" delay-500" alt="logo" src={logo} />
                         
                       </div>
@@ -76,7 +77,7 @@ const Home = () => {
                         />
                       </svg>
                     </span>{' '}
-                    <span className=" text-6xl ">Discover a <span className=" text-secondaryGrad">new</span> way to manage <span className=" text-primaryGrad">trade data</span>.</span>
+                    <span className=" text-6xl ">Discover a <span className=" text-secondaryGrad">new</span> way to manage <span className=" text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">trade data</span>.</span>
 
                   </Transition>
                 </h2>
@@ -88,7 +89,7 @@ const Home = () => {
                   enterFrom="opacity-0 translate-y-5"
                   enterTo="opacity-100 translate-y-0"
                 >
-                  <p className="text-xl text-gray-700 md:text-xl font-semibold opacity-50">
+                  <p className="text-xl md:text-xl font-semibold opacity-50">
                   A Comprehensive Solution for Tracking Trades, Instruments, and Market Information.
                   </p>
                 </Transition>

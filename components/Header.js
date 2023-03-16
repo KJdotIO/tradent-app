@@ -1,4 +1,5 @@
-import { React, useState} from "react";
+import { useState} from "react";
+import React from "react";
 import logo from '../public/Tradent-logo.png'
 import Image from "next/image";
 import Link from "next/link";
@@ -35,16 +36,6 @@ const Header = () => {
               <li>
                 <Link
                   href="/"
-                  aria-label="Our product"
-                  title="Our product"
-                  className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
-                >
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/"
                   aria-label="Product pricing"
                   title="Product pricing"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
@@ -54,7 +45,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/about"
                   aria-label="About us"
                   title="About us"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"
@@ -156,16 +147,6 @@ const Header = () => {
                         <li>
                           <Link
                             href="/"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="hover:underline font-medium tracking-wide hover:opacity-75 transition-opacity duration-200 hover:text-deep-purple-accent-400"
-                          >
-                            Features
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/"
                             aria-label="Product pricing"
                             title="Product pricing"
                             className="hover:underline font-medium tracking-wide hover:opacity-75 transition-opacity duration-200 hover:text-deep-purple-accent-400"
@@ -175,7 +156,7 @@ const Header = () => {
                         </li>
                         <li>
                           <Link
-                            href="/"
+                            href="/about"
                             aria-label="About us"
                             title="About us"
                             className="hover:underline font-medium tracking-wide hover:opacity-75 transition-opacity duration-200 hover:text-deep-purple-accent-400"
