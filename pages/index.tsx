@@ -2,19 +2,50 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Transition } from '@headlessui/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import logo from '../public/Tradent-logo.png'
 import Header from '../components/Header.js'
 import Footer from '../components/Footer'
 import Features from '../components/Features'
-
 import {FaChevronDown} from 'react-icons/fa'
+
+import { fetchTimeSeries } from "../services/alphaVantage";
+
+
 
 
 const Home = () => {
   const [fadeUp] = useState(true)
 
+  const [eurusdSymbol, seteurusdSymbol] = useState([])
+  const [EUbidPrice, setEUbidPrice] = useState(null)
+  
+  //EURUSD
+  async function loadCurrencyData() {
+    const fromCurrency = "GBP";
+    const toCurrency = "USD";
+    const data = await fetchTimeSeries(fromCurrency, toCurrency);
+    
+    const bidPrice = data["Realtime Currency Exchange Rate"]["8. Bid Price"];
+
+    setEUbidPrice(bidPrice)
+    
+    seteurusdSymbol(data)
+    
+    setTimeout(() => {
+      loadCurrencyData();
+    }, 20000);
+  }
+  
+
+useEffect(() => {
+  loadCurrencyData();
+}, []);
+
+console.log(eurusdSymbol)
+
+  
   return (
     <>
       <Head>
@@ -116,7 +147,7 @@ const Home = () => {
                   animate-gradient-xy
                   "
                 >
-                  <span className='bg-[#18181b] px-[32px] py-[15px] rounded-md'>Get started</span>
+                  <span className='bg-[#18181b] px-[32px] py-[15px] rounded-md'>Get Started</span>
                 </Link>
 
               </Transition>
