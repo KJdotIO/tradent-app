@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Head from "next/head";
 
 const product = () => {
-    const [eurusdSymbol, seteurusdSymbol] = useState([])
-    const [EUbidPrice, setEUbidPrice] = useState('')
+    // const [eurusdSymbol, seteurusdSymbol] = useState([])
+    // const [EUbidPrice, setEUbidPrice] = useState('')
     
     return (
         <>
