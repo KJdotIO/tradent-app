@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { Transition } from '@headlessui/react'
 import { useState, useEffect } from 'react'
 
+import heroBG from '../public/header-gradient.png'
+
 import logo from '../public/Tradent-logo.png'
 import Header from '../components/Header.js'
 import Footer from '../components/Footer'
@@ -18,32 +20,39 @@ import { fetchTimeSeries } from "../services/alphaVantage";
 const Home = () => {
   const [fadeUp] = useState(true)
 
-  const [eurusdSymbol, seteurusdSymbol] = useState([])
-  const [EUbidPrice, setEUbidPrice] = useState(null)
+//   const [eurusdSymbol, seteurusdSymbol] = useState([])
+//   const [EUbidPrice, setEUbidPrice] = useState('')
   
-  //EURUSD
-  async function loadCurrencyData() {
-    const fromCurrency = "GBP";
-    const toCurrency = "USD";
-    const data = await fetchTimeSeries(fromCurrency, toCurrency);
+//   //EURUSD
+//   async function loadCurrencyData() {
+//     const fromCurrency = "GBP";
+//     const toCurrency = "USD";
+//     const data = await fetchTimeSeries(fromCurrency, toCurrency);
     
-    const bidPrice = data["Realtime Currency Exchange Rate"]["8. Bid Price"];
+//     const bidPrice = data["Realtime Currency Exchange Rate"]["8. Bid Price"];
 
-    setEUbidPrice(bidPrice)
     
-    seteurusdSymbol(data)
+//     //Symbol data
+//     seteurusdSymbol(data)
     
-    setTimeout(() => {
-      loadCurrencyData();
-    }, 20000);
-  }
+//     if (data && data["Realtime Currency Exchange Rate"]) {
+//       const bidPrice = data["Realtime Currency Exchange Rate"]["8. Bid Price"];
+//       setEUbidPrice(bidPrice);
+//     } else {
+//       console.error('Unexpected API response:', data);
+//     }
+
+//     setTimeout(() => {
+//       loadCurrencyData();
+//     }, 20000);
+//   }
   
 
-useEffect(() => {
-  loadCurrencyData();
-}, []);
+// useEffect(() => {
+//   loadCurrencyData();
+// }, []);
 
-console.log(eurusdSymbol)
+// console.log(eurusdSymbol)
 
   
   return (
@@ -54,13 +63,15 @@ console.log(eurusdSymbol)
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+          <Image src={heroBG} alt="" className="transform -scale-y-100 absolute top-[60%] left-[45%] max-w-none -translate-x-1/2 -translate-y-1/2" />
         <Header />
-      <main className=" bg-[#18181b] min-h-screen mt-[75px] sm:[80px]">
+      <main className=" bg-[#131313] min-h-screen mt-[75px] sm:[80px]">
         
         <section>
 
           <div className=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-            <div className="max-w-xl sm:mx-auto lg:max-w-2xl">              <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
+            <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
+              <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
                 <Link href="/" className="mb-6 sm:mx-auto">
                     <Transition
                     show={fadeUp}

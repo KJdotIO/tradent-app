@@ -8,14 +8,14 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     return (
-      <div className="bg-[#18181b] z-40 fixed top-0 w-full">
+      <div className="bg-[#131313] z-40 fixed top-0 w-full border-b-2 border-white">
         <div className=" px-10 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24">
           <div className=" flex items-center justify-between">
             <Link
               href="/"
               aria-label="Company"
               title="Company"
-              className="inline-flex items-center"
+              className="inline-flex items-center z-[42]"
             >
               <div>  <Image alt="Tradent" src={logo} className='w-[20px] mr-1' /></div>
               <span className="ml-2 text-2xl font-black tracking-wide text-gray-100 ">
@@ -25,7 +25,7 @@ const Header = () => {
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <Link
-                  href="/"
+                  href="/product"
                   aria-label="Our product"
                   title="Our product"
                   className="hover:underline font-medium tracking-wide text-gray-100 hover:opacity-75 transition-opacity duration-200 hover:text-teal-accent-400"

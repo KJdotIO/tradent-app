@@ -63,13 +63,6 @@ const Features = () => {
                 Our curated news feed provides the latest insights into market trends, 
                 enabling you to stay ahead of the competition and make the most of opportunities as they arise.
                 </p>
-                <Link
-                  href="/"
-                  aria-label=""
-                  className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                >
-                  Learn more
-                </Link>
               </div>
             </div>
             <div className="flex flex-col max-w-md sm:mx-auto sm:flex-row">
@@ -91,13 +84,6 @@ const Features = () => {
                 track your gains and losses, and gain insights into your trading habits, 
                 all in one convenient location.
                 </p>
-                <Link
-                  href="/"
-                  aria-label=""
-                  className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                >
-                  Learn more
-                </Link>
               </div>
             </div>
             <div className="flex flex-col max-w-md sm:mx-auto sm:flex-row">
@@ -121,13 +107,6 @@ const Features = () => {
                 With our intuitive reports, you`ll gain valuable insights into your trading patterns 
                 and be able to optimize your investment strategies for maximum profitability.
                 </p>
-                <Link
-                  href="/"
-                  aria-label=""
-                  className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                >
-                  Learn more
-                </Link>
               </div>
             </div>
             <div className=" flex flex-col max-w-md sm:mx-auto sm:flex-row">
@@ -148,13 +127,6 @@ const Features = () => {
                 own custom widgets, charts, and graphs to display the information that is most relevant
                 to you, so you can stay informed and make smarter investment decisions. 
                 </p>
-                <Link
-                  href="/"
-                  aria-label=""
-                  className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                >
-                  Learn more
-                </Link>
               </div>
             </div>
           </div>
