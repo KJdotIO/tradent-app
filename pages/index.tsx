@@ -63,11 +63,13 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-          <Image src={heroBG} alt="" className="transform -scale-y-100 absolute top-[60%] left-[45%] max-w-none -translate-x-1/2 -translate-y-1/2" />
         <Header />
       <main className=" bg-[#131313] min-h-screen mt-[75px] sm:[80px]">
         
         <section>
+      <div className="w-full h-full overflow-hidden">
+        <Image src={heroBG} alt="" className="object-fit opacity-75 w-full h-full transform -scale-y-100 absolute top-[55%] left-[45%] max-w-none overflow-clip -translate-x-1/2 -translate-y-1/2" />
+      </div>
 
           <div className=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
@@ -119,7 +121,7 @@ const Home = () => {
                         />
                       </svg>
                     </span>{' '}
-                    <span className=" text-6xl ">Discover a <span className=" text-secondaryGrad">new</span> way to manage <span className=" text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">trade data</span>.</span>
+                    <span className=" text-6xl ">Discover a <span className=" text-cyan-400">new</span> way to manage <span className=" text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">trade data</span>.</span>
 
                   </Transition>
                 </h2>
