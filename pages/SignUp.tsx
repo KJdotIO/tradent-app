@@ -94,7 +94,7 @@ const signUp = () => {
 
             <div className="flex items-center justify-between">
               <p className="text-sm text-gray-500">
-                Have an account?
+                Already have an account?
                 <br />
                 <a className="underline" href="/SignIn">
                   Sign In
