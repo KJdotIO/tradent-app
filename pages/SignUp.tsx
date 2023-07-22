@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import app from "../firebase/clientApp";
 import { signUp } from "@/firebase/firebaseUtils";
+import Link from "next/link";
 
 
 
@@ -96,9 +97,9 @@ const [password, setPassword] = useState("");
               <p className="text-sm text-gray-500">
                 Already have an account?
                 <br />
-                <a className="underline" href="/SignIn">
+                <Link className="underline" href="/SignIn">
                   Sign In
-                </a>
+                </Link>
               </p>
 
               <button

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import app from "../firebase/clientApp";
 import { signIn } from "../firebase/firebaseUtils"; // Import the signIn function
+import Link from "next/link";
 
 
 
@@ -114,9 +115,9 @@ const handleSignIn = () => {
               <p className="text-sm text-gray-500">
                 New User?
                 <br />
-                <a className="underline" href="">
+                <Link className="underline" href="">
                   Sign Up
-                </a>
+                </Link>
               </p>
 
               <button
