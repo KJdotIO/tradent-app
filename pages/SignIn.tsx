@@ -3,7 +3,9 @@ import Footer from "@/components/Footer";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import app from "./firebase/clientApp";
+import app from "../firebase/clientApp";
+import { signIn } from "../firebase/firebaseUtils"; // Import the signIn function
+
 
 
 
@@ -31,23 +33,14 @@ const SignIn = () => {
 const auth = getAuth(app);
 
 const handleSignIn = () => {
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      console.log(user);
-      router.push('/')
-
-      return(
-        <>
-        <div className="toast">
-          <div className="alert alert-info">
-            <span>New message arrived.</span>
-          </div>
-        </div>
-        </>
-      )
-
+  signIn(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        router.push("/");
+        // ...
+        alert('Sign in')
     })
     .catch((error) => {
       const errorCode = error.code;

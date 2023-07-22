@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import app from "./firebase/clientApp";
+import app from "../firebase/clientApp";
+import { signUp } from "@/firebase/firebaseUtils";
 
 
 
@@ -14,22 +15,21 @@ const [password, setPassword] = useState("");
 
 
 
-const signUp = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+  const handleSignUp = () => {
+    signUp(email, password)
       .then((userCredential) => {
-        // Signed in 
+        // Signed up
         const user = userCredential.user;
         console.log(user);
         alert("Sign Up Successfully");
-
+        // ...
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);        // ..
-      });
-
-}
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
+    });
+  };
 
 
   return (
@@ -103,7 +103,7 @@ const signUp = () => {
 
               <button
                 className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-                onClick={signUp}
+                onClick={handleSignUp}
               >
                 Sign Up
               </button>
