@@ -68,13 +68,13 @@ const Home = () => {
         <dialog id="my_modal_1" className="modal">
           <form method="dialog" className="modal-box border-[1px] bg-[#131313] rounded-[5px] p-[50px]">
             <h1 className=" font-bold text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">Hello!</h1>
-            <p className=" py-4">I'm excited to let you know that this app is currently under development. It's going to take some time before it's fully complete, but I promise it'll be worth the wait.
+            <p className=" py-4">I&apos;m excited to let you know that this app is currently under development. It&apos;s going to take some time before it&apos;s fully complete, but I promise it'll be worth the wait.
 <br />
 <br />
-To get things started, I'm releasing the TradeLog feature first. This will let you try out the app and provide valuable feedback to me. Your feedback will be incredibly helpful for me to improve the app and make it better suit your needs.
+To get things started, I&apos;m releasing the TradeLog feature first. This will let you try out the app and provide valuable feedback to me. Your feedback will be incredibly helpful for me to improve the app and make it better suit your needs.
 <br />
 <br />
-After the initial release, I'll be rolling out updates addressing any issues and introducing new features.
+After the initial release, I&apos;ll be rolling out updates addressing any issues and introducing new features.
 <br /><br />
 Thanks for your patience and understanding. Stay tuned for more exciting updates! ✅</p>
             <div className="modal-action flex justify-between items-center">
