@@ -12,17 +12,15 @@ const Dashboard = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <div className="flex min-h-screen bg-[#131313]">
         <div className="h-screen overflow-y-hidden">
           <Sidebar />
         </div>
-        <main className="flex-grow overflow-y-auto">
-          
-        </main>
+        <main className="flex-grow overflow-y-auto"></main>
       </div>
     </>
   );
-}
+};
 
 export default Dashboard;

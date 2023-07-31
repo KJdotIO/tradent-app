@@ -7,15 +7,10 @@ import app from "../firebase/clientApp";
 import { signIn } from "../firebase/firebaseUtils"; // Import the signIn function
 import Link from "next/link";
 
-
-
-
 const SignIn = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-
 
   // useEffect(() => {
   //   // Check if user is already signed in
@@ -29,29 +24,25 @@ const SignIn = () => {
   //   // Clean up the listener when the component unmounts
   //   return () => unsubscribe();
   // }, []);
-  
-  
-const auth = getAuth(app);
 
-const handleSignIn = () => {
-  signIn(email, password)
+  const auth = getAuth(app);
+
+  const handleSignIn = () => {
+    signIn(email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
         router.push("/");
         // ...
-        alert('Sign in')
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
-    }
-    );
-
-}
-
+        alert("Sign in");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
+      });
+  };
 
   return (
     <>
@@ -66,9 +57,7 @@ const handleSignIn = () => {
 
         <div className=" max-w-[95%] mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 bg-[#131313] rounded-2xl bg-opacity-50 border-white border-[0.5px]">
           <div className="mx-auto max-w-lg text-center">
-            <h1 className="text-2xl font-bold sm:text-3xl">
-              Welcome Back.
-            </h1>
+            <h1 className="text-2xl font-bold sm:text-3xl">Welcome Back.</h1>
 
             <p className="mt-4 text-gray-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero
@@ -89,8 +78,6 @@ const handleSignIn = () => {
                   placeholder="Enter email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-
-                
               </div>
             </div>
 
@@ -106,8 +93,6 @@ const handleSignIn = () => {
                   placeholder="Enter password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
-
-                
               </div>
             </div>
 

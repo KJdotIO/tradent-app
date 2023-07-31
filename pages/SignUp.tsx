@@ -6,15 +6,11 @@ import app from "../firebase/clientApp";
 import { signUp } from "@/firebase/firebaseUtils";
 import Link from "next/link";
 
-
-
 const SignUp = () => {
-const auth = getAuth(app);
+  const auth = getAuth(app);
 
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSignUp = () => {
     signUp(email, password)
@@ -25,13 +21,12 @@ const [password, setPassword] = useState("");
         alert("Sign Up Successfully");
         // ...
       })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
-    });
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
+      });
   };
-
 
   return (
     <>
@@ -70,8 +65,6 @@ const [password, setPassword] = useState("");
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-
-                
               </div>
             </div>
 
@@ -88,8 +81,6 @@ const [password, setPassword] = useState("");
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-
-                
               </div>
             </div>
 

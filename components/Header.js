@@ -4,14 +4,11 @@ import logo from "../public/Tradent-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-    
       <div className="bg-[#131313] z-40 fixed top-0 w-full border-b-2 border-white">
         <div className=" px-10 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24">
           <div className=" flex items-center justify-between">
@@ -60,7 +57,6 @@ const Header = () => {
                   About us
                 </Link>
               </li>
-
             </ul>
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
@@ -134,7 +130,10 @@ const Header = () => {
                           className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-[#23272F] focus:bg-[#1c2026] focus:outline-none focus:shadow-outline"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                          <svg
+                            className="w-5 text-gray-600"
+                            viewBox="0 0 24 24"
+                          >
                             <path
                               fill="currentColor"
                               d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"

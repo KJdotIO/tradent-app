@@ -17,4 +17,3 @@ const app = initializeApp(clientCredentials);
 // const analytics = getAnalytics(app);
 
 export default app;
-

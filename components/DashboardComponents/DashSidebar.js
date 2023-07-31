@@ -1,15 +1,14 @@
 import React from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import logo from "../../public/Tradent-logo.png";
 import Image from "next/image";
 
 const Sidebar = () => {
   const router = useRouter();
-  
+
   const links = [
     { name: "Dashboard", path: "/Dashboard" },
     { name: "Trade Log", path: "/Dashboard/TradeLog" },
-
   ];
 
   return (
@@ -28,15 +27,16 @@ const Sidebar = () => {
 
       <nav>
         {links.map((link, index) => (
-          <div 
+          <div
             key={index}
-            className={` hover:bg-[#1f1f1f] hover:text-white p-3 rounded-[10px] ease-in-out mb-[10px] cursor-pointer ${router.pathname === link.path ? 'text-white' : 'text-[#393939]'}`}
+            className={` hover:bg-[#1f1f1f] hover:text-white p-3 rounded-[10px] ease-in-out mb-[10px] cursor-pointer ${
+              router.pathname === link.path ? "text-white" : "text-[#393939]"
+            }`}
             onClick={() => router.push(link.path)}
           >
             {link.name}
           </div>
         ))}
-        
       </nav>
     </aside>
   );

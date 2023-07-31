@@ -26,6 +26,8 @@ export function FirebaseProvider({ children }) {
   };
 
   return (
-    <FirebaseContext.Provider value={value}>{children}</FirebaseContext.Provider>
+    <FirebaseContext.Provider value={value}>
+      {children}
+    </FirebaseContext.Provider>
   );
 }
