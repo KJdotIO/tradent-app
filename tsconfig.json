@@ -23,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Header.js",
-    "components/Dashboard/DashSidebar.js"
+    "components/Dashboard/DashSidebar.js",
+    "global.d.ts",
   ],
   "exclude": ["node_modules"]
 }
