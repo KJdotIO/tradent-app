@@ -21,6 +21,9 @@ module.exports = {
       },
     },
     extend: {
+      transitionProperty: {
+        'transform': 'transform',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

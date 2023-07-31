@@ -77,7 +77,9 @@ const Home = () => {
       </button>
 
       {isModalOpen && (
-        <dialog id="my_modal_1" className="modal" open>
+        <dialog id="my_modal_1" className={`modal fixed inset-0 flex items-center justify-center transform transition-transform duration-300 ease-in-out ${isModalOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`} open style={{
+          backdropFilter: 'blur(5px)',
+        }}>
           <form
             method="dialog"
             className="modal-box border-[1px] bg-[#131313] rounded-[5px] p-[50px]"
