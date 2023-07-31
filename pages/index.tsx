@@ -11,10 +11,15 @@ import Header from "../components/Header.js";
 import Footer from "../components/Footer";
 import Features from "../components/Features";
 import { FaChevronDown } from "react-icons/fa";
+import { FaInfo } from "react-icons/fa";
+
+
+
 
 // import { fetchTimeSeries } from "../services/alphaVantage";
 
 const Home = () => {
+
   const [fadeUp] = useState(true);
 
   // const [eurusdSymbol, seteurusdSymbol] = useState([])
@@ -47,16 +52,6 @@ const Home = () => {
     // loadCurrencyData();
   }, []);
 
-  // const alertModal = () => {
-  //   return(
-  //     <>
-  //       <div className="alert alert-error z-50">
-  //         <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-  //         <span>This is not completed yet.</span>
-  //       </div>
-  //     </>
-  //   )
-  // };
 
   return (
     <>
@@ -67,11 +62,31 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
+      {/* Open the modal using ID.showModal() method */}
+      <button className="z-[900] bottom-0 right-0 mr-[20px] mb-[20px] btn fixed bg-secondaryGrad text-white hover:bg-opacity-75" onClick={()=>window.my_modal_1.showModal()}><FaInfo/></button>
+        <dialog id="my_modal_1" className="modal">
+          <form method="dialog" className="modal-box border-[1px] bg-[#131313] rounded-[5px] p-[50px]">
+            <h1 className=" font-bold text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">Hello!</h1>
+            <p className=" py-4">I'm excited to let you know that this app is currently under development. It's going to take some time before it's fully complete, but I promise it'll be worth the wait.
+<br />
+<br />
+To get things started, I'm releasing the TradeLog feature first. This will let you try out the app and provide valuable feedback to me. Your feedback will be incredibly helpful for me to improve the app and make it better suit your needs.
+<br />
+<br />
+After the initial release, I'll be rolling out updates addressing any issues and introducing new features.
+<br /><br />
+Thanks for your patience and understanding. Stay tuned for more exciting updates! ✅</p>
+            <div className="modal-action flex justify-between items-center">
+              <p>- KJ</p>
+              <button className=" bg-opacity-0 border-[1px] border-white text-white p-[10px] rounded-[5px] hover:scale-110 ease-in-out transition">Enough Yappin!</button>
+            </div>
+          </form>
+        </dialog>
+      
       <main className=" bg-[#131313] min-h-screen mt-[75px] sm:[80px]">
+
         <section>
-          <div className=" z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* {alertModal()} */}
-          </div>
           <div className=" opacity-75 w-full h-full overflow-hidden">
             <Image
               src={heroBG}
