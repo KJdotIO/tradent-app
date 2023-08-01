@@ -82,7 +82,7 @@ const Home = () => {
         }}>
           <form
             method="dialog"
-            className="modal-box border-[1px] bg-[#131313] rounded-[5px] p-[50px]"
+            className="modal-box border-[1px] bg-[#131313] rounded-[5px] lg:p-[50px]"
           >
             <h1 className=" font-bold text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">
               Hello!
