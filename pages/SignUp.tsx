@@ -7,26 +7,19 @@ import { signUp } from "@/firebase/firebaseUtils";
 import Link from "next/link";
 
 const SignUp = () => {
-  const auth = getAuth(app);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignUp = () => {
     signUp(email, password)
-      .then((userCredential) => {
-        // Signed up
-        const user = userCredential.user;
-        console.log(user);
+      .then(() => {
         alert("Sign Up Successfully");
-        // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
+        console.error(`Error code: ${error.code}, Error Message: ${error.message}`);
       });
   };
+
 
   return (
     <>
@@ -39,7 +32,7 @@ const SignUp = () => {
     - @tailwindcss/forms
 */}
 
-        <div className=" max-w-[95%] mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 bg-[#131313] rounded-2xl bg-opacity-50 border-white border-[0.5px]">
+        <div className=" max-w-[95%] mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-[#131313] rounded-2xl bg-opacity-50 border-white border-[0.5px]">
           <div className="mx-auto max-w-lg text-center">
             <h1 className="text-2xl font-bold sm:text-3xl">
               Get started today!

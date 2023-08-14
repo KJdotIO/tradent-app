@@ -24,7 +24,7 @@
     "**/*.tsx",
     "components/Header.js",
     "components/Dashboard/DashSidebar.js",
-    "global.d.ts",
+    "global.d.ts", "components/DashboardComponents/DashSidebar.js", "components/DashboardComponents/DashboardHeader.js", "components/DashboardComponents/TradelogTable.js",
   ],
   "exclude": ["node_modules"]
 }

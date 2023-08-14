@@ -12,42 +12,21 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  // useEffect(() => {
-  //   // Check if user is already signed in
-  //   const unsubscribe = auth.onAuthStateChanged((user) => {
-  //     if (user) {
-  //       // User is signed in, redirect to home page
-  //       router.push('/');
-  //     }
-  //   });
-
-  //   // Clean up the listener when the component unmounts
-  //   return () => unsubscribe();
-  // }, []);
-
-  const auth = getAuth(app);
-
   const handleSignIn = () => {
     signIn(email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        router.push("/");
-        // ...
-        alert("Sign in");
+      .then(() => {
+        router.push("/Dashboard/TradeLog");
+        alert("Signed in");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(`Error code: ${errorCode}, Error Message: ${errorMessage}`);
+        console.error(`Error code: ${error.code}, Error Message: ${error.message}`);
       });
   };
 
   return (
     <>
       <Header />
-      <main className="bg-[url('/register-grad.png')] bg-cover bg-no-repeat bg-center  flex flex-col justify-center items-center  w-[100vw min-h-screen sm:[80px]">
+      <main className="bg-[url('/register-grad.png')] bg-cover bg-no-repeat bg-center  flex flex-col justify-center items-center  w-[100vw min-h-screen sm:[80px]]">
         {/*
   Heads up! 👋
 

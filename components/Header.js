@@ -26,7 +26,7 @@ const Header = () => {
                 Tradent
               </span>
             </Link>
-            <ul className="flex items-center hidden space-x-8 lg:flex">
+            {/* <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <Link
                   href="/product"
@@ -57,7 +57,7 @@ const Header = () => {
                   About us
                 </Link>
               </li>
-            </ul>
+            </ul> */}
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <Link

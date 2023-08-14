@@ -13,6 +13,8 @@ import Features from "../components/Features";
 import { FaChevronDown } from "react-icons/fa";
 import { FaInfo } from "react-icons/fa";
 
+import {InfoModal, KnownIssues} from '../components/InfoModal'
+
 // import { fetchTimeSeries } from "../services/alphaVantage";
 
 const Home = () => {
@@ -69,52 +71,12 @@ const Home = () => {
       <Header />
 
       {/* Open the modal using ID.showModal() method */}
-      <button
-        className="z-[900] bottom-0 right-0 mr-[20px] mb-[20px] btn fixed bg-secondaryGrad text-white hover:bg-opacity-75"
-        onClick={handleButtonClick}
-      >
-        <FaInfo />
-      </button>
-
-      {isModalOpen && (
-        <dialog id="my_modal_1" className={`modal fixed inset-0 flex items-center justify-center transform transition-transform duration-300 ease-in-out ${isModalOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`} open style={{
-          backdropFilter: 'blur(5px)',
-        }}>
-          <form
-            method="dialog"
-            className="modal-box border-[1px] bg-[#131313] rounded-[5px] lg:p-[50px]"
-          >
-            <h1 className=" font-bold text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-blue-700 bg-clip-text animate-text">
-              Hello!
-            </h1>
-            <p className=" py-4">
-              I&apos;m excited to let you know that this app is currently under
-              development. It&apos;s going to take some time before it&apos;s
-              fully complete, but I promise it&apos;ll be worth the wait.
-              <br />
-              <br />
-              To get things started, I&apos;m releasing the TradeLog feature
-              first. This will let you try out the app and provide valuable
-              feedback to me. Your feedback will be incredibly helpful for me to
-              improve the app and make it better suit your needs.
-              <br />
-              <br />
-              After the initial release, I&apos;ll be rolling out updates
-              addressing any issues and introducing new features.
-              <br />
-              <br />
-              Thanks for your patience and understanding. Stay tuned for more
-              exciting updates! ✅
-            </p>
-            <div className="modal-action flex justify-between items-center">
-              <p>- KJ</p>
-              <button className=" bg-opacity-0 border-[1px] border-white text-white p-[10px] rounded-[5px] hover:scale-110 ease-in-out transition" onClick={handleCloseClick}>
-                Enough Yappin!
-              </button>
-            </div>
-          </form>
-        </dialog>
-      )}
+      <div>
+        <KnownIssues />
+      </div>
+      <div>
+        <InfoModal />
+      </div>
 
       <main className=" bg-[#131313] min-h-screen mt-[75px] sm:[80px]">
         <section>

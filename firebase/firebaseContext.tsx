@@ -12,7 +12,11 @@ interface FirebaseContextValue {
 const FirebaseContext = createContext<FirebaseContextValue | null>(null);
 
 export function useFirebase() {
-  return useContext(FirebaseContext);
+  const context = useContext(FirebaseContext);
+  if (!context) {
+    throw new Error("useFirebase must be used within a FirebaseProvider");
+  }
+  return context;
 }
 
 interface FirebaseProviderProps {
