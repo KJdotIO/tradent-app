@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { navItems } from "./dashboardData";
+import dashboardData from "./dashboardData";
+const { navItems } = dashboardData;
 import { XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import Logo from "../../public/Tradent-logo.png";
