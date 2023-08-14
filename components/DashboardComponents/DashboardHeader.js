@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenuIcon, UserIcon, CogIcon } from "@heroicons/react/outline"; 
 import { Button } from "@tremor/react";
-import {navItems, userItems} from '../../pages/Dashboard/dashboardData'
-
+import dashboardData from "./dashboardData";
+const { navItems, userItems } = dashboardData;
 
 
 const DashboardHeader = ({ toggleSidebar }) => {
