@@ -144,7 +144,7 @@ const Header = () => {
                     </div>
                     <nav>
                       <ul className="space-y-4 p-[24px]">
-                        <li>
+                        {/* <li>
                           <Link
                             href="/product"
                             aria-label="Our product"
@@ -173,12 +173,12 @@ const Header = () => {
                           >
                             About us
                           </Link>
-                        </li>
+                        </li> */}
                         <div className="">
                           <ul className="flex justify-between flex-wrap gap-5 items-start mt-[24px]">
                             <li className="flex">
                               <Link
-                                href="/"
+                                href="/SignUp"
                                 className=" max-w-[300px] border-[1px] hover:bg-primaryGrad focus:opacity-80 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign up"
                                 title="Sign up"
@@ -188,7 +188,7 @@ const Header = () => {
                             </li>
                             <li>
                               <Link
-                                href="/"
+                                href="/SignIn"
                                 className=" max-w-[300px] border-[1px] hover:bg-secondaryGrad focus:opacity-80 inline-flex items-center  justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign in"
                                 title="Sign in"

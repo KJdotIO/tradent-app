@@ -5,6 +5,7 @@ import { useState } from "react";
 import app from "../firebase/clientApp";
 import { signUp } from "@/firebase/firebaseUtils";
 import Link from "next/link";
+import router from "next/router";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ const SignUp = () => {
     signUp(email, password)
       .then(() => {
         alert("Sign Up Successfully");
+        router.push("/Dashboard/TradeLog");
       })
       .catch((error) => {
         console.error(`Error code: ${error.code}, Error Message: ${error.message}`);
