@@ -43,4 +43,4 @@ const chartdata = [
   ]
 
 
-  export { chartdata, navItems, userItems };
+  export default { chartdata, navItems, userItems };
