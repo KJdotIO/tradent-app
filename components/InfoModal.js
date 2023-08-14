@@ -201,9 +201,9 @@ const KnownIssues = () => {
               apparent that YOU are the one signed in.
               <br />
               <br />
-              If you are already signed in and navigate to the page's URL, you
+              If you are already signed in and navigate to the page&apos;s URL, you
               should be redirected straight to the dashboard rather than to the
-              index to sign in again. I'm in the process of implementing this
+              index to sign in again. I&apos;m in the process of implementing this
               behavior to enhance your user experience.
               <br />
               <br />
