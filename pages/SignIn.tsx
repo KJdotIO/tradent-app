@@ -6,17 +6,19 @@ import { useRouter } from "next/router";
 import app from "../firebase/clientApp";
 import { signIn } from "../firebase/firebaseUtils"; // Import the signIn function
 import Link from "next/link";
+import { setEmitFlags } from "typescript";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
+  const [emailOrUser, setEmailOrUser] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const [isUserSignedIn, setIsUserSignedIn] = useState(false)
 
   const handleSignIn = () => {
-    signIn(email, password)
+    signIn(emailOrUser, password)
       .then(() => {
-        router.push("/Dashboard/TradeLog");
-        alert("Signed in");
+        setIsUserSignedIn(true)
+        setTimeout(() => router.push("/Dashboard/TradeLog"), 1000);
       })
       .catch((error) => {
         console.error(`Error code: ${error.code}, Error Message: ${error.message}`);
@@ -25,7 +27,16 @@ const SignIn = () => {
 
   return (
     <>
-      <Header />
+
+      {isUserSignedIn && 
+        <div className="flex justify-center">
+          <div className="alert alert-success absolute top-5 max-w-[40%] h-[160px] flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>You've been Signed In</span>
+          </div>
+        </div>
+      }
+      
       <main className="bg-[url('/register-grad.png')] bg-cover bg-no-repeat bg-center  flex flex-col justify-center items-center  w-[100vw min-h-screen sm:[80px]]">
         {/*
   Heads up! 👋
@@ -55,7 +66,7 @@ const SignIn = () => {
                   type="email"
                   className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                   placeholder="Enter email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmailOrUser(e.target.value)}
                 />
               </div>
             </div>
@@ -79,7 +90,7 @@ const SignIn = () => {
               <p className="text-sm text-gray-500">
                 New User?
                 <br />
-                <Link className="underline" href="">
+                <Link className="underline" href="/SignUp">
                   Sign Up
                 </Link>
               </p>
@@ -87,6 +98,7 @@ const SignIn = () => {
               <button
                 className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
                 onClick={handleSignIn}
+                
               >
                 Sign In
               </button>

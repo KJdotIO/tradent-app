@@ -8,3 +8,4 @@ export async function fetchTimeSeries(fromCurrency, toCurrency) {
 
   return data;
 }
+

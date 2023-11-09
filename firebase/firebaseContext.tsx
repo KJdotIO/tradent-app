@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState, useMemo } from "react";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import app from "../firebase/clientApp";
 
@@ -9,9 +9,12 @@ interface FirebaseContextValue {
   auth: typeof auth;
 }
 
-const FirebaseContext = createContext<FirebaseContextValue | null>(null);
+const FirebaseContext = createContext<FirebaseContextValue>({
+  currentUser: null, // set default value for currentUser
+  auth, // default value for auth
+});
 
-export function useFirebase() {
+export function useFirebase(): FirebaseContextValue {
   const context = useContext(FirebaseContext);
   if (!context) {
     throw new Error("useFirebase must be used within a FirebaseProvider");
@@ -28,16 +31,20 @@ export function FirebaseProvider({ children }: FirebaseProviderProps) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log("Auth state changed:", user);
       setCurrentUser(user);
+    }, (error) => {
+      console.error(error);
+      // Handle the error appropriately
     });
 
     return unsubscribe;
   }, []);
 
-  const value = {
+  const value = useMemo(() => ({
     currentUser,
     auth,
-  };
+  }), [currentUser]);
 
   return (
     <FirebaseContext.Provider value={value}>

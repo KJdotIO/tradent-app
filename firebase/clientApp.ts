@@ -1,6 +1,6 @@
 import "firebase/auth";
 import "firebase/firestore";
-import { initializeApp } from "firebase/app";
+import { getApp, getApps, initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 
 // import { getAnalytics } from "firebase/analytics";
@@ -14,7 +14,7 @@ const clientCredentials = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(clientCredentials);
+const app = !getApps().length ? initializeApp(clientCredentials) : getApp();
 const db = getFirestore(app);
 
 // const analytics = getAnalytics(app);

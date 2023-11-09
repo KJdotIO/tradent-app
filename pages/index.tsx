@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
 import { useState, useEffect } from "react";
-
 import heroBG from "../public/header-gradient.png";
 
 import logo from "../public/Tradent-logo.png";
@@ -45,6 +44,7 @@ const Home = () => {
   //     loadCurrencyData();
   //   }, 20000);
   // }
+
 
   useEffect(() => {
     // loadCurrencyData();

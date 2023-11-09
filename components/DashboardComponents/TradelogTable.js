@@ -1,7 +1,8 @@
 import {SearchSelect, SearchSelectItem, NumberInput, Title, Button, TextInput, Card, Table, TableHead, TableHeaderCell, TableBody, TableRow, TableCell, TableFoot, TableFooterCell  } from "@tremor/react";
 import { db } from "@/firebase/clientApp";
-import { collection, doc, getDocs, query, where, onSnapshot } from "firebase/firestore";
+import { collection, doc, getDocs, query, where, onSnapshot, updateDoc } from "firebase/firestore";
 import { PlusIcon } from "@heroicons/react/outline";
+import { useFirebase } from "@/firebase/firebaseContext";
 
 
 import { useEffect, useState } from "react";
@@ -21,6 +22,9 @@ const TradelogTable = () => {
     const [executionPrice, setExecutionPrice] = useState(0);
     const [exitPrice, setExitPrice] = useState(0);
     const [profitLoss, setProfitLoss] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const { currentUser } = useFirebase();
 
     const tradeAddedToast = () => {
         setShowToast(true)
@@ -29,36 +33,60 @@ const TradelogTable = () => {
         }, 3000)
     }
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
   
     useEffect(() => {
-        const tradesCollection = collection(db, 'Trades');
+        if (!currentUser) {
+            // If there is no user, don't fetch anything
+            return;
+        }
+        const tradesCollectionRef = collection(db, 'users', currentUser.uid, 'Trades');
     
-        // Set up a listener on the Trades collection
-        const unsubscribe = onSnapshot(tradesCollection, (snapshot) => {
-          const tradeList = snapshot.docs.map((doc) => doc.data());
-          setTrades(tradeList);
+         // Set up a listener on the user-specific Trades subcollection
+        const unsubscribe = onSnapshot(tradesCollectionRef, (snapshot) => {
+            const userTrades = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+            }));
+            setTrades(userTrades);
         });
-    
-        return () => {
-          unsubscribe();
-        };
-      }, []);
+
+        return () => unsubscribe();
+      }, [currentUser]);
 
       const handleSubmit = async () => {
         const newTrade = {
-            date,
+            date: new Date().toLocaleDateString(),
             time,
             symbol,
-            lots,
+            lots: parseFloat(lots.toFixed(2)),
             tradeType,
             executionPrice,
             exitPrice,
             profitLoss,
         }
 
-        const tradeCollection = collection(db, 'Trades');
-        await addDoc(tradeCollection, newTrade);
+        if (!currentUser) {
+            // Handle the case where there is no user signed in
+            return;
+        }
+
+        const tradesCollectionRef = collection(db, 'users', currentUser.uid, 'Trades');
+        await addDoc(tradesCollectionRef, newTrade);
+
+        closeModal();
+
+        setDate('');
+        setTime('');
+        setSymbol('');
+        setLots(0);
+        setTradeType('');
+        setExecutionPrice(0);
+        setExitPrice(0);
+        setProfitLoss(0);
 
         tradeAddedToast();
       }
@@ -69,56 +97,72 @@ const TradelogTable = () => {
                     <Title className="text-white font-bold text-[30px]">TradeLog</Title>
                     <button className="p-[5px]" onClick={()=>window.my_modal_3.showModal()}><PlusIcon className="h-8 w-8 text-gray-500"/></button>
                 </div>
-                <dialog id="my_modal_3" className="modal">
+                <dialog open={isModalOpen} id="my_modal_3" className="modal">
                     <form method="dialog" className="rounded-[10px] border-[1px] border-white bg-[#191919] p-[30px] w-[90%] flex flex-col gap-3 overflow-auto h-[700px]">
                         <div className="flex justify-between">
                             <Title className="text-white font-bold text-[30px]">Add Trade</Title>
                             <button className="btn-ghost"><XIcon className="w-[40px] h-[40px] " /></button>
                         </div>
 
-                        {/* <div>
-                            <label className="label">Date</label>
-                            <DateRangePicker value={date} className=" bg-[#191919] border-none hover:bg-[191919]" enableSelect={false} />
-                        </div> */}
+                        <div>
+                        <label className="label">Date</label>
+                        <input
+                            type="date"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
+                            className="bg-[#191919] text-white border-none hover:bg-[#191919] rounded p-2"
+                        />
+                        </div>
 
+                        {/* Time Input */}
                         <div>
                             <label className="label">Time</label>
                             <input type="time" className="bg-[#191919] text-tremor-content-inverted border-none hover:bg-[#191919] rounded p-2" value={time} onChange={(e) => setTime(e.target.value)} />
                         </div>
 
+                        {/* Symbol Input */}
                         <div>
                             <label className="label">Symbol</label>
-                            <SearchSelect className="text-tremor-content-strong">
-                                <SearchSelectItem value="1">
-                                    Yessirr
-                                </SearchSelectItem>
+                            <TextInput className="text-tremor-content-strong" value={symbol} onChange={(e) => setSymbol(e.target.value)} />
+                        </div>
+
+                        {/* Lots Input */}
+                        <div>
+                            <label className="label">Lots</label>
+                            <NumberInput min={0} value={lots} onValueChange={setLots} />
+                        </div>
+
+                        {/* Trade Type Input */}
+                        <div>
+                            <label className="label">Trade Type</label>
+                            <SearchSelect value={tradeType} onValueChange={(value) => setTradeType(value)} className="text-tremor-content-strong">
+                            <SearchSelectItem value="buy">Buy</SearchSelectItem>
+                            <SearchSelectItem value="sell">Sell</SearchSelectItem>
                             </SearchSelect>
                         </div>
 
-                        <div>
-                            <label className="label">Lots</label>
-                        </div>
-
-                        <div>
-                            <label className="label">Trade Type</label>
-                        </div>
-
+                        {/* Execution Price Input */}
                         <div>
                             <label className="label">Price of Execution</label>
+                            <NumberInput min={0} step="any" value={executionPrice} onValueChange={setExecutionPrice} />
                         </div>
 
+                        {/* Exit Price Input */}
                         <div>
                             <label className="label">Exit Price</label>
+                            <NumberInput min={0} step="any" value={exitPrice} onValueChange={setExitPrice} />
                         </div>
 
+                        {/* Profit/Loss Input */}
                         <div>
                             <label className="label">Profit/Loss</label>
+                            <NumberInput min={0} step="any" value={profitLoss} onValueChange={setProfitLoss} />
                         </div>
 
+                        {/* Submit Button */}
                         <div>
-                            <button className="btn bg-secondaryGrad text-white" onClick={handleSubmit}>Add Trade</button>
+                            <button type="button" className="btn bg-secondaryGrad text-white" onClick={handleSubmit}>Add Trade</button>
                         </div>
-
 
 
                     </form>
@@ -127,14 +171,14 @@ const TradelogTable = () => {
             {showToast && 
             <div className={`toast transition-all ease-in-out duration-500 ${showToast ? '' : 'scale-0 opacity-0'}`}>
                 <div className="alert alert-info">
-                    <span>New message arrived.</span>
+                    <span>Trade added!</span>
                 </div>
             </div>}
                 
             <Table className="b rounded-[5px] p-4">
                 <TableHead>
                     <TableRow>
-                        {/* <TableHeaderCell>Date</TableHeaderCell> */}
+                        <TableHeaderCell>Date</TableHeaderCell>
                         <TableHeaderCell>Time</TableHeaderCell>
                         <TableHeaderCell>Symbol</TableHeaderCell>
                         <TableHeaderCell>Lots</TableHeaderCell>
@@ -145,9 +189,9 @@ const TradelogTable = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {trades.map((trade, index) => (
-                        <TableRow key={index}>
-                            {/* <TableCell>{trade.date}</TableCell> */}
+                    {trades.map((trade) => (
+                        <TableRow key={trades}>
+                            <TableCell>{trade.date}</TableCell>
                             <TableCell>{trade.time}</TableCell>
                             <TableCell>{trade.symbol}</TableCell>
                             <TableCell>{trade.lots}</TableCell>
